@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/jquery-smartwizard-master/src/css/smart_wizard_all.css">
+    <link rel="stylesheet" href="style.css">
+    
+    
+    <title>Document</title>
+
+
+
+<style>
+  *{
+      margin: 0;
+      padding: 0;
+  }
+  html,
+  body{
+      background-color: #f1f1f1;
+      height: 100%;
+      overflow: hidden;
+  }
+  .container{
+  width: 100%;
+  height: 100vh;
+  background-color: #f7f7fa;
+  padding-right: 0 !important;
+  
+  
+  }
+  .nav .sw{
+      display: none !important;
+  }
+  .sw  .nav {
+      display: none !important;
+  }
+  .nav-link {
+      display: none;
+  
+  }
+  .sw{
+         padding-left: 0;
+          height: 100%;
+      
+  }
+  .tab-content{
+      display: contents;
+      width: 100%;
+  }
+  .tab-pane{
+      width: 100%;
+  }
+  
+  .dot{
+      width: 2rem;
+      height:2rem;
+      background-color: white;
+      border-radius: 50%;
+      margin-left: 20%;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      display: flex;
+  }
+  .dot2{
+      width: 2rem;
+      height: 2rem;
+      background-color: white;
+      border-radius: 50%;
+      margin-left: 15%;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      display: flex;
+  }
+  .triangle{
+      border-right: 10px solid;
+      border-bottom: 10px solid;
+      height: 30px;
+      width: 30px;
+      transform: rotate(-45deg);
+      border-radius: 5px;
+      color:#18b8c4;
+      display: flex;
+  }
+  .triangle1{
+      position: absolute;
+      border-right: 10px solid;
+      border-bottom: 10px solid;
+      height: 20px;
+      width: 20px;
+      color:#18b8c4;
+      transform: rotate( -45deg );
+      border-radius: 5px;
+      margin-right: 2rem;
+      display: flex;
+    
+  
+  }
+  .container-fluid{
+      background-color: #f7f7fa;
+      height: 100vh;
+      padding-right: 0 !important;
+      display: flex;
+  }
+  
+  .row{
+      width: 85%;
+      height: 100%;
+      background-color: #EC0E2A;
+      margin-left: 15%;
+      padding-left: 0 !important;
+  }
+  .lado2{
+      width:100%;
+      height: 100%;
+      background-color: white;
+      border-radius: 0px 20px 20px 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: -24%;
+      
+  }
+  .logo{
+      width: 100%;
+      display: flex;
+      
+      align-items: center;
+      margin-top: 10%;
+  
+  }
+  .logo h2{
+      margin-left: 10%;
+  }
+  
+  .barra{
+      width: 100%;
+      display: flex;
+      margin-top: 7%;
+    
+  }
+  .count{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 25%;
+      margin: auto;
+      height: 3rem;
+  }
+  
+  .progress-text{
+      font-size: 12px
+  }
+  .progress{
+      width: 3rem;
+      height: .4rem;
+      color: #EC0E2A;
+  }
+  .progress-bar{
+      color: #EC0E2A;
+      height: .4rem;
+      
+  }
+  .logo2{
+      width: 5%;
+      height: 65%;
+      position: absolute;
+      top: 35%;
+      left: 25%;
+  }
+  
+  .logo2-img{
+      display: flex;
+      position: absolute;
+      height: 100%;
+  }
+  .form{
+      width: 55%;
+      margin-left: 18%;
+      
+  }
+  .titulo2{
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      margin-left: 4%;
+      border-bottom: 2px solid #EC0E2A  ;
+  }
+  .form-group{
+      margin-bottom: .3rem;
+      
+  }
+  .form-group  input{
+      width: 100%;
+      border-radius: .6rem;
+      overflow: hidden;
+      
+  }
+  .form-group label{
+      color: #6c757d;
+      margin-top: 1%;
+     
+  }
+  .form-text{
+      margin-top: 0rem;
+  }
+  .btn{
+      float: right;
+      background-color:  #EC0E2A;
+      color: white;
+      margin-top: 10px;
+      margin-left: 10px;
+  
+  }
+  input:hover{
+      border: cyan solid 1px;
+  }
+  
+  
+  .form-control::placeholder{
+      padding: .375rem 1.75rem;
+  }
+    .olho {
+      float: right;
+      cursor: pointer;
+      width: 20px;
+      right: 2rem;
+      position: relative;
+      top: 1.8rem;
+  }
+  .input-group{
+      position: relative;
+      width: 45% !important;
+      margin-bottom: 1rem!important;
+     
+  }
+  
+  .input-group2{
+      
+      display: flex;
+      
+  }
+  
+  .input-group-prepend {
+       margin-right: 0 !important;
+       display: flex;
+       width: 100%;
+       
+  }
+  .sw-btn-prev{
+      border-color: black;
+      background-color: white  ;
+      color: black;
+  }
+  .input-group-prepend{
+      height: 50%;
+  }
+  .input-group-prepend input{
+      border-top-right-radius: 1.5rem !important;
+      border-bottom-right-radius: 1.5rem !important;
+      border-left: 0 !important;
+      
+      display: flex;
+      width: 100%;
+      height: 100%;
+  }
+  .input-group span {
+      border-top-left-radius: .5rem !important;
+      border-bottom-left-radius: .5rem !important;
+      border-radius: .5rem 0px 0px .5rem;
+      border-right-style: none  !important;
+  }
+  span.input-group-text{
+      border-radius: .5rem 0px 0px .5rem;
+      width: 60%;
+  }
+  
+  .col2 .input-group .form-control input{
+      border-radius: 1rem;
+      margin-bottom: 5%;
+  }
+  .form-control{
+      
+      margin-bottom: 5%;
+      width: 130%;
+  }
+  
+  
+  .form-group    input{
+      width: 100%;
+      border-radius: 1rem;
+      overflow: hidden;
+      
+  }
+  .form-group2 {
+      width: 100%;
+      border-radius: .6rem;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      
+     
+  }
+  .form-group3 {
+      width: 100%;
+      border-radius: .6rem;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+     
+  }
+  .col2 input{
+      border-radius: 1rem;
+  }
+  .form-group .form-group2 label{
+      color: #6c757d;
+      font-weight: 300 !important;
+      font-size: 15px !important;
+  }
+  #form1 {
+      margin-left: 23%;
+  }
+  #form2{
+      margin-left: 23%;
+  }
+  .form-text{
+      margin-top: 0rem;
+  }
+  #form3{
+      height: 65% !important;
+  }
+  .button{
+      float: right !important;
+  }
+  
+  
+  
+  input:hover{
+      border: cyan solid 1px;
+  }
+  
+  
+  
+    .olho {
+      float: right;
+      cursor: pointer;
+      width: 20px;
+      right: 2rem;
+      position: relative;
+      top: 1.8rem;
+  }
+  
+  #url{
+      display: grid;
+      margin-left: 7%;
+  }
+  #urlper{
+      width: 50%;
+      display: inline;
+      margin-top: 2%;
+  }
+  @media (max-width: 768px){
+      .lado2{
+          margin-left: -27%;
+          width: 132%;
+      }
+  .container .container-sm .container-fluid .container-sm {
+      width: 115%;
+      padding-right: 0 !important; 
+       padding-left: 0 !important;
+   } 
+  }
+  
+  @media (max-width: 576px){
+      .lado2{
+          margin-left: -27%;
+          width: 132%;
+      }
+  
+      .container .container-sm .container-fluid .container-sm {
+         width: 115%;
+         padding-right: 0 !important; 
+          padding-left: 0 !important;
+      }  
+  }
+  
+  
+  @media (max-width: 360px){
+      .lado2{
+          margin-left: -27%;
+          width: 132%;
+      }
+  
+      .container .container-sm .container-fluid .container-sm {
+         width: 115%;
+         padding-right: 0 !important; 
+          padding-left: 0 !important;
+      }  
+  }
+  </style>
+</head>
+<body >
+   <div class="container">
+      <div class="container-fluid">
+          <div class="row no-gutter" >
+            <div id="smartwizard">
+              <div class="lado2" >
+                            
+                              <ul class="nav">
+                                 <li>
+                                    <a class="nav-link" href="#step-1">
+                                       Step 1
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a class="nav-link" href="#step-2">
+                                       Step 2
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a class="nav-link" href="#step-3">
+                                       Step 3
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a class="nav-link" href="#step-4">
+                                       Step 4
+                                    </a>
+                                 </li>
+                              </ul>
+               <div class="tab-content">
+                  <div id="step-1" class="tab-pane" role="tabpanel">
+                     <div class="logo">
+                              
+                     <span class="dot">
+                        <div class="triangle">
+                        </div>
+                        <div class="triangle1"></div>
+                     </span>
+                     <h2 >Inicie Seu Cadastro</h2>
+                     </div>
+                     <div class="barra">
+                     <span class="dot2">
+                        <div class="triangle">
+                        </div>
+                        <div class="triangle1"></div>
+                     </span>
+                  <h2 class="titulo2" >Informações Basicas</h2>
+                  <div class="count">
+                  <h2 class="progress-text text-muted">1 de 3</h2>
+                  <div class="progress" style="height: .4rem ">
+                     <div class="progress-bar bg-danger  progress-bar-striped progress-bar-animated " height role="progressbar" style="width: 33% " aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+                     </div>
+                  </div>
+          
+              
+          </div>
+              <form class="form">
+                  <div class="form-group">
+                      <label for="">Nome :</label>
+                      <input class="form-control" id="placeholder-text1"  placeholder="Seu nome">
+                  </div>    
+                  <div class="form-group">
+                      <label>Telefone :</label>
+                      <input class="form-control" id="placeholder-text" placeholder="Seu telefone">
+                  </div>
+                  <div class="form-group">
+                      <label >E-mail :</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputPassword1">Senha :</label>
+                      <label class="form-text text-muted">(sua senha deve ter no minimo 7 caracteres)</label>
+                      <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" id="olho" class="olho">
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                  
+                      
+                      
+                      
+                  </div>
+                  
+                  <button class="btn sw-btn-next" type="button">Próximo</button>
+                  </form>
+               </div>
+               
+               
+               <div id="step-2" class="tab-pane" role="tabpanel">
+                  <div class="logo">
+                            
+                     <span class="dot">
+                         <div class="triangle">
+                         </div>
+                         <div class="triangle1"></div>
+                     </span>
+                     <h2 >Inicie Seu Cadastro</h2>
+                 </div>
+                  <div class="barra">
+                     <span class="dot2">
+                         <div class="triangle">
+                         </div>
+                         <div class="triangle1"></div>
+                     </span>
+                  <h2 class="titulo2" >Informações Basicas</h2>
+                  <div class="count">
+                  <h2 class="progress-text text-muted">2 de 3</h2>
+                  <div class="progress" style="height: .4rem ">
+                      <div class="progress-bar bg-danger  progress-bar-striped progress-bar-animated " height role="progressbar" style="width: 60% " aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                     </div>
+                   </div>
+             
+                 
+             </div>
+                 <form class="form">
+                     <div class="form-group">
+                         <label for="">CEP :</label>
+                         <input class="form-control" id="placeholder-text1"  placeholder="Seu Cep" type="text" >
+                     </div>    
+                     <div class="form-group">
+                         <label>Endereço :</label>
+                         <input class="form-control" id="placeholder-text" placeholder="Seu Endereço"  >
+                     </div>
+                     
+                     </form>
+                     <form class="form">
+                       <div class="form-group2">
+                         
+                         <div class="col2">
+                           <label>Número :</label>
+                           <input type="text" class="form-control" placeholder="Nº">
+                         </div>
+                         <div class="col2"  id="form1">
+                           <label>Complemento :</label>
+                           <input type="text"    class="form-control" placeholder="Complemento">
+                         </div>
+                       </div>
+
+                       <div class="form-group2">
+                         <div class="col2">
+                           <label>Cidade :</label>
+                           <input type="text" class="form-control" placeholder="Cidade">
+                         </div>
+                         <div class="col2" id="form2">
+                           <label >Estado :</label>
+                           <input type="text"   class="form-control" placeholder="Estado">
+                         </div>
+                       </div>
+                       
+                       <div class="button">
+                          <button class="btn sw-btn-next" type="button" >Próximo</button>
+                          <button class="btn sw-btn-prev" type="button"  >Voltar</button>
+                        
+                     </div>
+                     
+
+                     </form>
+               </div>
+               <div id="step-3" class="tab-pane" role="tabpanel">
+                  <div class="logo">
+                            
+                     <span class="dot">
+                         <div class="triangle">
+                         </div>
+                         <div class="triangle1"></div>
+                     </span>
+                     <h2 >Inicie Seu Cadastro</h2>
+                 </div>
+                  <div class="barra">
+                     <span class="dot2">
+                         <div class="triangle">
+                         </div>
+                         <div class="triangle1"></div>
+                     </span>
+                  <h2 class="titulo2" >Informações Basicas</h2>
+                  <div class="count">
+                  <h2 class="progress-text text-muted">3 de 3</h2>
+                  <div class="progress" style="height: .4rem ">
+                      <div class="progress-bar bg-danger  progress-bar-striped progress-bar-animated " height role="progressbar" style="width: 100% " aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                     </div>
+                   </div>
+             
+                 
+                 </div>
+                 <form class="form">
+                     <div class="form-group">
+                         <label for="">Razão Social :</label>
+                         <input class="form-control" id="placeholder-text1"  placeholder="Seu Cep" type="text" >
+                     </div>    
+                     <div class="form-group">
+                         <label>CNPJ :</label>
+                         <input class="form-control" id="placeholder-text" placeholder="Seu Endereço"  >
+                     </div>
+                     <div class="form-group">
+                       <label>Nome Fantasia :</label>
+                       <input class="form-control" id="placeholder-text" placeholder="Seu Endereço"  >
+                   </div>
+                     </form>
+                     <form class="form">
+                       <div class="form-group3">
+                         
+                         <div class="input-group ">
+                           <label >Raio de Atendimento :</label>
+                           
+                           <div class="input-group-prepend">
+                             <span class="input-group-text">Km</span>
+                             <input type="text" class="form-control" aria-label="Quantia">
+                           </div>
+                           
+                         </div>
+
+                         
+                         <div class="input-group ">
+                           <label >Tempo médio de espera :</label>
+                           <div class="input-group-prepend">
+                             <span class="input-group-text">min</span>
+                             <input type="text" class="form-control" aria-label="Quantia">
+                           </div>
+                          
+                         </div>
+
+                         
+                         <div class="input-group  ">
+                           <label >Valor base da taxa de entrega :</label>
+                           <div class="input-group-prepend">
+                             <span class="input-group-text">R$</span>
+                             <input type="text" class="form-control" aria-label="Quantia">
+                           </div>
+                           
+                         </div>
+                         
+                         
+                         <div class="input-group ">
+                           <label for="basic-url">Valor por km da taxa de entrega:</label>
+                           <div class="input-group-prepend">
+                             <span class="input-group-text">R$</span>
+                             <input type="text" class="form-control" aria-label="Quantia">
+                           </div>
+                           
+                         </div>
+                         </div>
+                         <div class="button">
+                           <button class="btn sw-btn-next" type="button">Abrir Conta</button>
+                           <button class="btn sw-btn-prev" type="button">Voltar</button>
+                          </div>
+                       </form>
+                     
+               </div>
+                  
+              
+              <div id="step-4" class="tab-pane" role="tabpanel">
+                <div class="logo">
+                            
+                  <span class="dot">
+                      <div class="triangle">
+                      </div>
+                      <div class="triangle1"></div>
+                  </span>
+                  <h2 >Inicie Seu Cadastro</h2>
+              </div>
+               <div class="barra">
+                  <span class="dot2">
+                      <div class="triangle">
+                      </div>
+                      <div class="triangle1"></div>
+                  </span>
+               <h2 class="titulo2" >Sua conta foi aberta !!!</h2>
+                  </div>
+                  <form class="form">
+                  <div class="form-group" id="url">
+                    <label for="basic-url">Pra finalizar crie um URL personalizado.</label>
+                    <label for="basic-url">URL personalizado :</label>
+                    <div >
+                    <input class="form-control"  placeholder="Seu Endereço" id="urlper"  >
+                    <label for="basic-url">.deliveryem.casa</label>
+                  </div>
+
+                    <div class="button">
+                      <button class="btn sw-btn-next" type="button">Finalizar</button>
+                      <button class="btn sw-btn-prev" type="button">Voltar</button>
+                     </div>
+                  </form>
+                </div>
+                </div>
+             </div>
+            </div>
+         </div>
+         </div>
+         </div>
+      </div>
+
+                     
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="/jquery-smartwizard-master/src/js/jquery.smartWizard.js"></script>
+    
+</body>
+
+
+
+<script>
+
+document.getElementById('olho').addEventListener('mousedown', function() {
+    document.getElementById('exampleInputPassword1').type = 'text';
+  });
+  
+  document.getElementById('olho').addEventListener('mouseup', function() {
+    document.getElementById('exampleInputPassword1').type = 'password';
+  });
+  
+  // Para que o password não fique exposto apos mover a imagem.
+  document.getElementById('olho').addEventListener('mousemove', function() {
+    document.getElementById('exampleInputPassword1').type = 'password';
+  });
+  $(document).ready(function(){
+   
+
+ 
+ // SmartWizard initialize
+ $('#smartwizard').smartWizard({
+   theme: 'default',
+   selected:0,
+   cycleSteps: true,
+   transition: {
+      animation: 'slide-vertical', // Effect on navigation, none/fade/slide-horizontal/slide-vertical/slide-swing
+      speed: '10000', // Transion animation speed
+      easing:'' // Transition animation easing. Not supported without a jQuery easing plugin
+  },
+   toolbarSettings: {
+      toolbarPosition: 'none', // none, top, bottom, both
+      toolbarButtonPosition: 'right', // left, right, center
+      showNextButton: false, // show/hide a Next button
+      showPreviousButton: false, // show/hide a Previous button
+      toolbarExtraButtons: [] // Extra buttons to show on toolbar, array of jQuery input/buttons elements
+  },
+  anchorSettings: {
+      anchorClickable: true, // Enable/Disable anchor navigation
+      enableAllAnchors: false, // Activates all anchors clickable all times
+      markDoneStep: true, // Add done state on navigation
+      markAllPreviousStepsAsDone: true, // When a step selected by url hash, all previous steps are marked done
+      removeDoneStepOnNavigateBack: false, // While navigate back done step after active step will be cleared
+      enableAnchorOnDoneStep: true, // Enable/Disable the done steps navigation
+      hiddenSteps: 4 // Hidden steps
+  },
+
+});
+ 
+});
+
+</script>
+</html>
